@@ -1,0 +1,21 @@
+#Git Hub repository set up
+https://github.com/pmgao31/Cucumber_Maven_Project.git
+
+C:\Users\Prasanth M\eclipse-workspace\Cucumber_Maven_Project
+
+git init --->Create an empty git repository()local
+git remote add origin "https://github.com/pmgao31/Cucumber_Maven_Project.git"
+git status
+	Tracked files:Part of git repository
+	Untracked file:not Part of git repository
+git add -A - will send it to staging area
+
+Before Executing "commit" command need to do the below for 1st time
+git config --global user.name "pmgao31"
+git config --global user.email "prasanth31mathi@gmail.com"
+
+git commit -m "1st round of commit....."
+
+git push -u origin master
+
+git pull origin master
