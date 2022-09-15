@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Sauce Labs]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Validate the Suace Labs Application(failed)">
+    <classes>
+      <class name="runnerClasses.MyRunner">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+          <include name="scenario" invocation-numbers="2 3 4"/>
+        </methods>
+      </class> <!-- runnerClasses.MyRunner -->
+    </classes>
+  </test> <!-- Validate the Suace Labs Application(failed) -->
+</suite> <!-- Failed suite [Sauce Labs] -->

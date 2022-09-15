@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-15T21:12:50 IST" name="Sauce Labs" finished-at="2022-09-15T21:13:03 IST" duration-ms="13226">
+    <groups>
+      <group name="cucumber">
+        <method signature="MyRunner.scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" name="scenario" class="runnerClasses.MyRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2022-09-15T21:12:50 IST" name="Validate the Suace Labs Application" finished-at="2022-09-15T21:13:03 IST" duration-ms="13226">
+      <class name="runnerClasses.MyRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:50 IST" name="setUpClass" finished-at="2022-09-15T21:12:50 IST" duration-ms="358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:50 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-15T21:12:53 IST" duration-ms="2830" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Checkout validation scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Swag Bags page functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:53 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-15T21:12:55 IST" duration-ms="1829" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["T_Shirt Validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Swag Bags page functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:55 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-15T21:12:57 IST" duration-ms="2585" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Price validation"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Swag Bags page functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:57 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-15T21:12:59 IST" duration-ms="1882" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sorting the product Scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Swag Bags page functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:12:59 IST" name="scenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-09-15T21:13:01 IST" duration-ms="1361" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid User Id"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Wrong Username feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runnerClasses.MyRunner@1283bb96]" started-at="2022-09-15T21:13:01 IST" name="tearDownClass" finished-at="2022-09-15T21:13:03 IST" duration-ms="2348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runnerClasses.MyRunner -->
+    </test> <!-- Validate the Suace Labs Application -->
+  </suite> <!-- Sauce Labs -->
+</testng-results>
