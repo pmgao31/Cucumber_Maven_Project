@@ -25,7 +25,7 @@ public class Steps_SwagBags {
 	@Given("Launch Url in the browser  {string}")
 	public void launch_url_in_the_browser(String url) {
 		check_out = new Checkout_page(driver);
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Prasanth M\\eclipse-workspace\\Cucumber_Maven_Project\\resources\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);

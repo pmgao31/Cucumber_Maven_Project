@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>Cucumber_Maven_Project</groupId>
@@ -60,11 +62,12 @@
 			<version>7.6.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.4.0</version>
+			<version>4.28.1</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -80,6 +83,40 @@
 			<version>5.2.2</version>
 		</dependency>
 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.14.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Cucumber Java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.14.0</version>
+		</dependency>
+
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- SLF4J Logger Implementation -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>net.openhft</groupId>
 			<artifactId>chronicle</artifactId>
 			<version>3.4.3</version>
@@ -90,7 +127,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>maven-cucumber-reporting</artifactId>
@@ -104,10 +141,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.10.1</version>
 				<configuration>
-					<fork>true</fork>
-					<executable>C:\Program Files\Java\jdk-17.0.4.1\bin\javac.exe</executable>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -123,7 +162,8 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+			<!--
+			https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
 			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
@@ -138,8 +178,10 @@
 						<configuration>
 							<projectName>Cucumber_Maven_Project</projectName>
 							<!-- output directory for the generated report -->
-							<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber-reports</cucumberOutput>
+							<outputDirectory>
+								${project.build.directory}/cucumber-reports</outputDirectory>
+							<cucumberOutput>
+								${project.build.directory}/cucumber-reports</cucumberOutput>
 							<jsonFiles>
 								<!-- supports wildcard or name pattern -->
 								<param>**/*.json</param>

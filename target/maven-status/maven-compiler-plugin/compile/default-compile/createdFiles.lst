@@ -1,0 +1,4 @@
+pageObjects/SwagLabs_Homepage.class
+pageObjects/Loginpage.class
+pageObjects/Checkout_page.class
+enums/WebDriverManager.class

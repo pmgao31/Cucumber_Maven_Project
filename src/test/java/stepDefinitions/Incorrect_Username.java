@@ -24,7 +24,7 @@ public class Incorrect_Username {
 	@Given("Open chrome and launch the Url {string}")
 	public void open_chrome_and_launch_the_url(String url) {
 		check_out = new Checkout_page(driver);
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Prasanth M\\eclipse-workspace\\Cucumber_Maven_Project\\resources\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "//resources//drivers//chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
