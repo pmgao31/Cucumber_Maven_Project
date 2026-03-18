@@ -1,0 +1,23 @@
+{
+  "login": {
+    "invalid": {
+      "errorMessage": "Username and password do not match any user in this service"
+    }
+  },
+  "home": {
+    "title": "Products"
+  },
+  "products": {
+    "tshirt": "Sauce Labs Bolt T-Shirt"
+  },
+  "checkout": {
+    "defaultUser": {
+      "firstname": "Raja",
+      "lastname": "Rajan",
+      "zipcode": "636704"
+    }
+  },
+  "sorting": {
+    "index": "2"
+  }
+}

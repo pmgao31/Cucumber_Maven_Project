@@ -33,6 +33,7 @@ public class DriverFactory {
                 default:
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--incognito");
                     options.addArguments("--start-maximized");
                     // enable headless by setting headless=true in config if needed
                     if ("true".equalsIgnoreCase(ConfigReader.get("headless"))) {

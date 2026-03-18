@@ -5,10 +5,8 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.ExtentTest;
 
-import java.time.Instant;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.Map;
@@ -89,6 +87,8 @@ public class TestListener implements ITestListener {
 
         // flush reports at the end of suite
         ExtentManager.getExtentReports().flush();
+        ExtentTestManager.removeTest();
+        
     }
 
     @Override
@@ -124,7 +124,7 @@ public class TestListener implements ITestListener {
             } else {
                 ExtentTestManager.getTest().fail(result.getThrowable());
             }
-            ExtentTestManager.getTest().log(Status.FAIL, "Failure at " + Instant.now().toString());
+//            ExtentTestManager.getTest().log(Status.FAIL, "Failure at " + Instant.now().toString());
         } catch (Exception e) {
             // fallback logging
             if (ExtentTestManager.getTest() != null) {
@@ -154,8 +154,18 @@ public class TestListener implements ITestListener {
     }
 
     private String getDisplayName(ITestResult result) {
-        String scenario = ScenarioContext.getScenarioName();
-        return scenario != null ? scenario : result.getMethod().getMethodName();
+    	String scenario = ScenarioContext.getScenarioName();
+
+        if (scenario != null && !scenario.isEmpty()) {
+            return scenario;
+        }
+
+        // 👇 Ignore TestNG internal method
+        if (result.getMethod().getMethodName().equals("runScenario")) {
+            return null; // skip creating test
+        }
+
+        return result.getMethod().getMethodName();
     }
 
     private void ensureTestExists(ITestResult result) {

@@ -12,17 +12,21 @@ import org.openqa.selenium.WebDriver;
 
 public class ScreenshotUtil {
 
-    public static String takeScreenshot(WebDriver driver, String prefix) {
-        try {
-            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String dir = "target/screenshots";
-            new File(dir).mkdirs();
-            String path = dir + File.separator + prefix + "_" + timestamp + ".png";
-            FileUtils.copyFile(src, new File(path));
-            return path;
-        } catch (IOException e) {
-            return null;
-        }
-    }
+	public static String takeScreenshot(WebDriver driver, String prefix) {
+		try {
+			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+			String dir = System.getProperty("user.dir") + "/target/screenshots";
+			new File(dir).mkdirs();
+
+			String path = dir + File.separator + prefix + "_" + timestamp + ".png";
+
+			FileUtils.copyFile(src, new File(path));
+
+			return path; // absolute path ✅
+		} catch (IOException e) {
+			return null;
+		}
+	}
 }

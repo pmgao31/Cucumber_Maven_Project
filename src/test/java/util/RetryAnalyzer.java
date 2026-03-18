@@ -13,7 +13,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     @Override
     public boolean retry(ITestResult result) {
-        if (count >= maxRetries) return false;
+        if (count >maxRetries) return false;
         Throwable t = result.getThrowable();
         if (t == null) return false;
         if (isRetryable(t)) {
@@ -42,12 +42,10 @@ public class RetryAnalyzer implements IRetryAnalyzer {
     }
 
     private boolean isRetryable(Throwable t) {
-        if (t instanceof org.openqa.selenium.TimeoutException) return true;
         if (t instanceof org.openqa.selenium.NoSuchElementException) return true;
         if (t instanceof org.openqa.selenium.StaleElementReferenceException) return true;
         if (t instanceof org.openqa.selenium.ElementClickInterceptedException) return true;
         if (t instanceof org.openqa.selenium.WebDriverException) return true;
-        if (t instanceof java.lang.RuntimeException) return true;
         String cname = t.getClass().getName().toLowerCase();
         if (cname.contains("timeout")) return true;
         if (cname.contains("stale")) return true;

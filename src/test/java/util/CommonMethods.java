@@ -48,7 +48,6 @@ public class CommonMethods {
 
     // Retry click with simple backoff
     public static void retryClick(WebElement element, int attempts, long waitBetweenMs) {
-        WebDriver driver = getDriver();
         int tries = 0;
         while (true) {
             try {
@@ -125,6 +124,10 @@ public class CommonMethods {
     // Hard assertions
     public static void assertTrue(boolean condition, String message) {
         Assert.assertTrue(condition, message);
+    }
+    
+    public static void assertFalse(boolean condition, String message) {
+        Assert.assertFalse(condition, message);
     }
 
     public static void assertEquals(Object actual, Object expected, String message) {

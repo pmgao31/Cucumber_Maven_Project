@@ -3,6 +3,7 @@ package util;
 public class ScenarioContext {
     private static final ThreadLocal<String> scenarioName = new ThreadLocal<>();
     private static final ThreadLocal<String> currentStep = new ThreadLocal<>();
+    private static final ThreadLocal<String> currentStepStatus = new ThreadLocal<>();
 
     public static void setScenarioName(String name) {
         scenarioName.set(name);
@@ -28,8 +29,22 @@ public class ScenarioContext {
         currentStep.remove();
     }
 
+    // New: track current step status (PASSED, FAILED, SKIPPED, etc.)
+    public static void setCurrentStepStatus(String status) {
+        currentStepStatus.set(status);
+    }
+
+    public static String getCurrentStepStatus() {
+        return currentStepStatus.get();
+    }
+
+    public static void clearCurrentStepStatus() {
+        currentStepStatus.remove();
+    }
+
     public static void clearAll() {
         clearCurrentStep();
         clearScenarioName();
+        clearCurrentStepStatus();
     }
 }

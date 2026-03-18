@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import com.cucumberbdd.pageobjects.HomePage;
 import com.cucumberbdd.pageobjects.LoginPage;
 import util.ConfigReader;
+import util.Constants;
 import util.CommonMethods;
 import util.DriverFactory;
 
@@ -32,8 +33,24 @@ public class LoginSteps {
 
     @Then("user should see the home page title")
     public void verifyHomePageTitle() {
-        homePage = new HomePage(driver);
+        String expectedTitle = Constants.HOME_PAGE_TITLE;
+    	homePage = new HomePage(driver);
         String title = homePage.getTitleText();
-        CommonMethods.assertTrue(title != null && !title.isEmpty(), "Home page title should be visible");
+        CommonMethods.assertEquals(title,expectedTitle, "Home page title should be visible");
+    }
+    
+    @When("user logs in with invalid credentials")
+    public void invalidLogIn() {
+        loginPage.enterUsername(ConfigReader.get("app.invalidusername"));
+        loginPage.enterPassword(ConfigReader.get("app.invalidpassword"));
+        loginPage.clickLogin();
+    }
+    
+    
+    @Then("user should see an error message")
+    public void verifyErrorMessage() {
+		String errorMsg = loginPage.getErrorMessage();
+		CommonMethods.assertTrue(errorMsg.contains(Constants.INVALID_LOGIN_ERROR), "Error message should indicate invalid credentials");
+
     }
 }

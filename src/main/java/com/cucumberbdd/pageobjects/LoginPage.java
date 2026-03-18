@@ -16,6 +16,9 @@ public class LoginPage extends BasePage {
 
     @FindBy(how = How.ID, id = "login-button")
     WebElement loginBtn;
+    
+    @FindBy(how = How.XPATH, xpath = "//h3[@data-test='error']")
+    WebElement errorMessage;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -33,4 +36,9 @@ public class LoginPage extends BasePage {
     public void clickLogin() {
         click(loginBtn);
     }
+
+	public String getErrorMessage() {
+		String errorMsg = getText(errorMessage);
+		return errorMsg;
+	}
 }
