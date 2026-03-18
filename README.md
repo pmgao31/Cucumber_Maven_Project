@@ -1,43 +1,170 @@
-# Cucumber_BDD
+# 🚀 Cucumber BDD Automation Framework (Selenium + TestNG)
 
-This is a sample Selenium Cucumber BDD project using TestNG, Log4j2, and ExtentReports.
+A scalable and maintainable **UI Automation Framework** built using **Selenium, Cucumber (BDD), and TestNG**.
+Designed with industry best practices like **Page Object Model (POM)**, **data-driven testing**, **parallel execution**, and **rich reporting**.
 
-How to run
-1. Ensure Java 17 and Maven are installed.
-2. From project root, run: mvn test
+---
 
-Configuration
-- Edit `src/test/resources/config.properties` to change URL, username, password, or browser.
+## 📌 Tech Stack
 
+* **Language:** Java
+* **Automation Tool:** Selenium WebDriver
+* **BDD Framework:** Cucumber
+* **Test Runner:** TestNG
+* **Build Tool:** Maven
+* **Reporting:** Extent Reports
+* **Design Pattern:** Page Object Model (POM)
+* **Data Handling:** Config + JSON (TestDataReader)
+* **Version Control:** Git
 
-## Quick test run & reports
+---
 
-Run tests (full):
+## 🏗️ Framework Architecture
 
-```cmd
-cd "C:\Users\Prasanth M\eclipse-workspace\Cucumber_BDD"
+![Framework Architecture](docs/images/framework-architecture.png)
+
+---
+
+## 📊 Sample Extent Report
+
+Below is a sample execution report generated after test run:
+
+![Extent Report](docs/images/extent-report.png)
+
+---
+
+## 🧪 Sample Test Execution Output
+
+```bash
+[INFO] Running Cucumber Test Suite
+
+Scenario: Successful login with valid credentials  ✔ PASSED
+Scenario: Invalid login attempt                    ✔ PASSED
+Scenario: Checkout validation                     ✔ PASSED
+Scenario: Product sorting                         ✔ PASSED
+
+===========================================
+Tests run: 4, Failures: 0, Skipped: 0
+===========================================
+
+BUILD SUCCESS
+```
+
+---
+
+## 📂 Project Structure
+
+```
+Cucumber_BDD/
+│
+├── src/main/java/com/cucumberbdd/pageobjects
+│   ├── BasePage.java
+│   ├── LoginPage.java
+│   ├── HomePage.java
+│   ├── CheckoutPage.java
+│   └── WaitUtils.java
+│
+├── src/test/java
+│   ├── base
+│   ├── hooks
+│   ├── runner
+│   ├── stepDefinitions
+│   └── util
+│
+├── src/test/resources
+│   ├── features
+│   ├── config.properties
+│   └── testdata.json
+│
+├── pom.xml
+├── testng.xml
+└── README.md
+```
+
+---
+
+## ▶️ How to Run Tests
+
+### 🔹 Using Maven
+
+```bash
 mvn clean test
 ```
 
-Build without running tests:
+### 🔹 Using TestNG
 
-```cmd
-mvn -DskipTests package
-```
+* Right-click `testng.xml`
+* Run as → **TestNG Suite**
 
-Reports and artifacts
-- Extent HTML reports: target/extent-reports/ (files created by ExtentManager)
-- Cucumber JSON: target/cucumber-reports/cucumber.json
-- Screenshots: target/screenshots/ (filenames include scenario and step when captured)
+---
 
-Notes
-- Cucumber hooks (`hooks.Hooks`) initialize the WebDriver via `util.DriverFactory.initDriver()` before each scenario and create an Extent test entry with a timestamp.
-- TestNG listener (`util.TestListener`) captures screenshots on failure and attaches them to Extent reports. It also uses `util.ScenarioContext` to include scenario name and current step in captions.
-- If you see Chrome/CDP warnings in logs, you can optionally add a selenium-devtools dependency matching your browser's CDP channel.
+## ⚡ Parallel Execution
 
-Troubleshooting
-- If a test reports NPE about driver being null, ensure `hooks.Hooks` is executing (Cucumber hooks must be on the glue path) and that your step definitions call `DriverFactory.getDriver()`.
-- If Extent tests are null in the listener, the listener will create a fallback Extent test; prefer hooks to create the test for richer context.
+Framework supports **scenario-level parallel execution** using:
 
-Next steps
-- I can add `.gitignore` entries for the Extent reports and screenshots, or further refine the listener to capture step-level details from Cucumber more precisely.
+* `@DataProvider(parallel = true)`
+* `testng.xml` thread configuration
+
+---
+
+## 🔁 Retry Mechanism
+
+Failed test cases are automatically retried using:
+
+* `RetryAnalyzer`
+* `RetryTransformer`
+
+---
+
+## 📸 Screenshot on Failure
+
+* Screenshots are captured automatically on failure
+* Attached in Extent Report
+
+---
+
+## 📦 Test Data Management
+
+| Environment Data 	-> `config.properties` |
+| Test Data        	-> `testdata.json`     |
+
+---
+
+## 📌 Sample Scenarios Covered
+
+* Login with valid credentials
+* Login with invalid credentials
+* Product validation
+* Checkout flow validation
+* Sorting functionality validation
+
+---
+
+## 🧠 Design Highlights
+
+* Thread-safe WebDriver using `ThreadLocal`
+* Clean separation of layers (BDD → Steps → POM → Utils)
+* Reusable utilities and centralized configuration
+* Extensible and scalable structure
+
+---
+
+## 🚀 Future Enhancements
+
+* CI/CD integration (Jenkins / GitHub Actions)
+* Docker execution
+* API + UI integration
+* Advanced reporting dashboard
+
+---
+
+## 👨‍💻 Author
+
+**Prasanth M**
+QA Automation Engineer | Selenium | API Testing | Framework Design
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and feel free to contribute!
