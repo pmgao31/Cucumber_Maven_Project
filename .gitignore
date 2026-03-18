@@ -1,0 +1,9 @@
+# Build folders
+target/
+bin/
+logs/
+
+# Eclipse
+.settings/
+.classpath
+.project
